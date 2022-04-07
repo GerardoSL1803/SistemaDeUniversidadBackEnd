@@ -2,6 +2,7 @@ CREATE DATABASE Universidades
 GO
 
 USE Universidades
+GO
 
 CREATE TABLE ErroresBD(
 	IdError INT IDENTITY(1, 1),
@@ -434,7 +435,7 @@ CREATE PROCEDURE SP_Sedes_Insertar
 	END CATCH
 	GO
 
-	CREATE OR ALTER PROCEDURE SP_Sedes_Actualizar
+	CREATE PROCEDURE SP_Sedes_Actualizar
     @CodigoSede INT,
     @CodigoUniversidad INT,
     @Direccion VARCHAR(500),
