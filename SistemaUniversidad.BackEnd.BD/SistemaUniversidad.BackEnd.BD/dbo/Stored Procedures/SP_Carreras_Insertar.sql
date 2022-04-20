@@ -1,5 +1,5 @@
 ﻿CREATE PROCEDURE SP_Carreras_Insertar
-    @CodigoSede INT,
+	@CodigoSede INT,
 	@Nombre VARCHAR(50),
 	@CreadoPor VARCHAR(60),
 	@ExisteError BIT OUTPUT,

@@ -23,7 +23,7 @@ EXEC sp_addextendedproperty
     @level2type = N'Column'	,@level2name = 'CodigoCarrera'
 GO
 EXEC sp_addextendedproperty 
-    @name = N'MS_Description',@value = 'Código de la Sede Universitaria',
+    @name = N'MS_Description',@value = 'Código de la Sede',
     @level0type = N'Schema'	,@level0name = 'dbo',
     @level1type = N'Table'	,@level1name = 'Carreras', 
     @level2type = N'Column'	,@level2name = 'CodigoSede'

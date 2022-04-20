@@ -1,15 +1,16 @@
 ﻿CREATE PROCEDURE SP_Cursos_Insertar
-	 @Nombre VARCHAR(20),
-     @MontoCurso DECIMAL(18,3),
-	 @CreadoPor VARCHAR(60),
-	 @ExisteError BIT OUTPUT,
-	 @DetalleError VARCHAR(60) OUTPUT
+	@CodigoCarrera INT,
+	@Nombre VARCHAR(20),
+    @MontoCurso DECIMAL(18,3),
+	@CreadoPor VARCHAR(60),
+	@ExisteError BIT OUTPUT,
+	@DetalleError VARCHAR(60) OUTPUT
 	AS
 	BEGIN TRY		
 		BEGIN TRANSACTION
 			
-			INSERT INTO Cursos(Nombre,MontoCurso, CreadoPor)
-			VALUES (@Nombre,@MontoCurso ,@CreadoPor)
+			INSERT INTO Cursos(CodigoCarrera,Nombre,MontoCurso, CreadoPor)
+			VALUES (@CodigoCarrera,@Nombre,@MontoCurso ,@CreadoPor)
 
 			SET @ExisteError = 0
 

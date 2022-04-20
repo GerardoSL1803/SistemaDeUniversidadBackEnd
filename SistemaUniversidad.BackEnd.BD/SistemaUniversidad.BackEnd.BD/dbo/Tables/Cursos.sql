@@ -1,5 +1,6 @@
 ﻿CREATE TABLE Cursos(
     CodigoCurso INT IDENTITY(1,1),
+	CodigoCarrera INT,
     Nombre VARCHAR(20) NOT NULL,
     MontoCurso DECIMAL(18,3) NOT NULL,
     Activo BIT DEFAULT 1,
@@ -8,12 +9,25 @@
     CreadoPor VARCHAR(60),
     ModificadoPor VARCHAR(60)
     CONSTRAINT PK_Cursos PRIMARY KEY(CodigoCurso)
+	CONSTRAINT FK_Cursos_CodigoCarrera FOREIGN KEY(CodigoCarrera) REFERENCES Carreras(CodigoCarrera)
 )
 GO
 EXEC sp_addextendedproperty 
     @name = N'MS_Description',@value = 'Cursos a llevar en la Carrera',
     @level0type = N'Schema'	,@level0name = 'dbo',
     @level1type = N'Table'	,@level1name = 'Cursos'
+GO
+EXEC sp_addextendedproperty 
+    @name = N'MS_Description',@value = 'Código del curso.',
+    @level0type = N'Schema'	,@level0name = 'dbo',
+    @level1type = N'Table'	,@level1name = 'Cursos', 
+    @level2type = N'Column'	,@level2name = 'CodigoCurso'
+GO
+EXEC sp_addextendedproperty 
+    @name = N'MS_Description',@value = 'Código de la carrera.',
+    @level0type = N'Schema'	,@level0name = 'dbo',
+    @level1type = N'Table'	,@level1name = 'Cursos', 
+    @level2type = N'Column'	,@level2name = 'CodigoCarrera'
 GO
 EXEC sp_addextendedproperty 
     @name = N'MS_Description',@value = 'Nombre del curso',

@@ -1,5 +1,6 @@
 ﻿CREATE PROCEDURE SP_Cursos_Actualizar
    	@CodigoCurso INT,
+	@CodigoCarrera INT,
 	@Nombre VARCHAR(20),
     @MontoCurso DECIMAL(18,3),
 	@ModificadoPor VARCHAR(60),
@@ -16,6 +17,7 @@
 				BEGIN
 					UPDATE Cursos
 					SET
+					    CodigoCarrera = @CodigoCarrera,
 						Nombre = @Nombre,
 						MontoCurso = @MontoCurso,
 						FechaModificacion = GETDATE(),

@@ -550,6 +550,7 @@ RETURNS TABLE AS
 		SELECT * 
 		FROM VW_Sedes_SeleccionarTodos
 GO	
+
 CREATE TABLE Carreras(
     CodigoCarrera INT IDENTITY(1,1),
 	CodigoSede INT,
@@ -578,7 +579,7 @@ EXEC sp_addextendedproperty
 GO
 
 EXEC sp_addextendedproperty 
-    @name = N'MS_Description',@value = 'Código de la Sede Universitaria',
+    @name = N'MS_Description',@value = 'Código de la Sede',
     @level0type = N'Schema'	,@level0name = 'dbo',
     @level1type = N'Table'	,@level1name = 'Carreras', 
     @level2type = N'Column'	,@level2name = 'CodigoSede'
@@ -637,7 +638,7 @@ END
 GO
 
 CREATE PROCEDURE SP_Carreras_Insertar
-    @CodigoSede INT,
+	@CodigoSede INT,
 	@Nombre VARCHAR(50),
 	@CreadoPor VARCHAR(60),
 	@ExisteError BIT OUTPUT,
@@ -778,6 +779,7 @@ GO
 
 CREATE TABLE Cursos(
     CodigoCurso INT IDENTITY(1,1),
+	CodigoCarrera INT,
     Nombre VARCHAR(20) NOT NULL,
     MontoCurso DECIMAL(18,3) NOT NULL,
     Activo BIT DEFAULT 1,
@@ -786,6 +788,7 @@ CREATE TABLE Cursos(
     CreadoPor VARCHAR(60),
     ModificadoPor VARCHAR(60)
     CONSTRAINT PK_Cursos PRIMARY KEY(CodigoCurso)
+	CONSTRAINT FK_Cursos_CodigoCarrera FOREIGN KEY(CodigoCarrera) REFERENCES Carreras(CodigoCarrera)
 )
 GO
 
@@ -793,6 +796,20 @@ EXEC sp_addextendedproperty
     @name = N'MS_Description',@value = 'Cursos a llevar en la Carrera',
     @level0type = N'Schema'	,@level0name = 'dbo',
     @level1type = N'Table'	,@level1name = 'Cursos'
+GO
+
+EXEC sp_addextendedproperty 
+    @name = N'MS_Description',@value = 'Código del curso.',
+    @level0type = N'Schema'	,@level0name = 'dbo',
+    @level1type = N'Table'	,@level1name = 'Cursos', 
+    @level2type = N'Column'	,@level2name = 'CodigoCurso'
+GO
+
+EXEC sp_addextendedproperty 
+    @name = N'MS_Description',@value = 'Código de la carrera.',
+    @level0type = N'Schema'	,@level0name = 'dbo',
+    @level1type = N'Table'	,@level1name = 'Cursos', 
+    @level2type = N'Column'	,@level2name = 'CodigoCarrera'
 GO
 
 EXEC sp_addextendedproperty 
@@ -855,17 +872,18 @@ END
 GO
 
 CREATE PROCEDURE SP_Cursos_Insertar
-	 @Nombre VARCHAR(20),
-     @MontoCurso DECIMAL(18,3),
-	 @CreadoPor VARCHAR(60),
-	 @ExisteError BIT OUTPUT,
-	 @DetalleError VARCHAR(60) OUTPUT
+	@CodigoCarrera INT,
+	@Nombre VARCHAR(20),
+    @MontoCurso DECIMAL(18,3),
+	@CreadoPor VARCHAR(60),
+	@ExisteError BIT OUTPUT,
+	@DetalleError VARCHAR(60) OUTPUT
 	AS
 	BEGIN TRY		
 		BEGIN TRANSACTION
 			
-			INSERT INTO Cursos(Nombre,MontoCurso, CreadoPor)
-			VALUES (@Nombre,@MontoCurso ,@CreadoPor)
+			INSERT INTO Cursos(CodigoCarrera,Nombre,MontoCurso, CreadoPor)
+			VALUES (@CodigoCarrera,@Nombre,@MontoCurso ,@CreadoPor)
 
 			SET @ExisteError = 0
 
@@ -885,6 +903,7 @@ CREATE PROCEDURE SP_Cursos_Insertar
 	GO
 	CREATE PROCEDURE SP_Cursos_Actualizar
    	@CodigoCurso INT,
+	@CodigoCarrera INT,
 	@Nombre VARCHAR(20),
     @MontoCurso DECIMAL(18,3),
 	@ModificadoPor VARCHAR(60),
@@ -901,6 +920,7 @@ CREATE PROCEDURE SP_Cursos_Insertar
 				BEGIN
 					UPDATE Cursos
 					SET
+					    CodigoCarrera = @CodigoCarrera,
 						Nombre = @Nombre,
 						MontoCurso = @MontoCurso,
 						FechaModificacion = GETDATE(),
