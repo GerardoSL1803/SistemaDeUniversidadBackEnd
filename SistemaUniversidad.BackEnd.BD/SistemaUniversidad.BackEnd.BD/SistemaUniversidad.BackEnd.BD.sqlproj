@@ -7,7 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{88585ff9-5043-406d-b6a1-34b1bbb8ceac}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql150DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
@@ -177,5 +177,9 @@
     <Build Include="dbo\Stored Procedures\SP_CursosEnAulas_Actualizar.sql" />
     <Build Include="dbo\Stored Procedures\SP_CursosEnAulas_Desactivar.sql" />
     <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SysObtenerClaseDesdeTabla.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SistemaUniversidad.BackEnd.BD.publish.xml" />
   </ItemGroup>
 </Project>
