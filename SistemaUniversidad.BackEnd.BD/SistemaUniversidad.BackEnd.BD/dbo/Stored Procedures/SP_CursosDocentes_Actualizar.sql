@@ -30,7 +30,7 @@
 			ELSE
 				BEGIN
 					SET @ExisteError = 1
-					SET @DetalleError = 'Número de código  ' + @Codigo +'. No Existe'
+					SET @DetalleError = 'Número de código  ' + CONVERT(VARCHAR , @Codigo) +'. No Existe'
 				END
 		COMMIT TRANSACTION
 	END TRY
@@ -42,6 +42,6 @@
 		EXEC @NumeroDeError = SP_ErroresBD_Insertar @ModificadoPor
 
 		SET @ExisteError = 1
-		SET @DetalleError = 'Error al actulizar. Número de código: '+ @Codigo	+ '. Número de Error: ' + @NumeroDeError		
+		SET @DetalleError = 'Error al actulizar. Número de código: '+ CONVERT(VARCHAR , @Codigo)	+ '. Número de Error: ' + @NumeroDeError		
 
 	END CATCH

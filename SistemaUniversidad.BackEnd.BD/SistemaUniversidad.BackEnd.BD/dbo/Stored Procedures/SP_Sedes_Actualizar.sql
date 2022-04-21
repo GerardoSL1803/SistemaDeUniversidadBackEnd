@@ -32,7 +32,7 @@
 			ELSE
 				BEGIN
 					SET @ExisteError = 1
-					SET @DetalleError = 'Sede: '+	@CodigoSede	+'. No Existe'
+					SET @DetalleError = 'Sede: '+	CONVERT(VARCHAR , @CodigoSede)	+'. No Existe'
 				END
 		COMMIT TRANSACTION
 	END TRY
@@ -44,6 +44,6 @@
 		EXEC @NumeroDeError = SP_ErroresBD_Insertar @ModificadoPor
 
 		SET @ExisteError = 1
-		SET @DetalleError = 'Error al actualizar la sede: '+	@CodigoSede	+ '. Número de Error: ' + @NumeroDeError		
+		SET @DetalleError = 'Error al actualizar la sede: '+	CONVERT(VARCHAR , @CodigoSede)	+ '. Número de Error: ' + @NumeroDeError		
 
 	END CATCH

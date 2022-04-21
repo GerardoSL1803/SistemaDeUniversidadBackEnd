@@ -25,7 +25,7 @@
 			ELSE
 				BEGIN
 					SET @ExisteError = 1
-					SET @DetalleError = 'Matricula: '+	@CodigoMatricula	+' No Existe'
+					SET @DetalleError = 'Matricula: '+	CONVERT(VARCHAR , @CodigoMatricula)	+' , No Existe'
 				END
 		COMMIT TRANSACTION
 	END TRY
@@ -36,6 +36,6 @@
 		EXEC @NumeroDeError = SP_ErroresBD_Insertar @ModificadoPor
 
 		SET @ExisteError = 1
-		SET @DetalleError = 'Error al eliminar la Matricula: '+	@CodigoMatricula	+ '. Número de Error: ' + @NumeroDeError
+		SET @DetalleError = 'Error al eliminar la Matricula: '+	CONVERT(VARCHAR , @CodigoMatricula)	+ '. Número de Error: ' + @NumeroDeError
 
 	END CATCH

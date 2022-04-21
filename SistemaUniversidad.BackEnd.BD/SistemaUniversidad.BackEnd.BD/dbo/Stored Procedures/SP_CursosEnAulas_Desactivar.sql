@@ -28,7 +28,7 @@
 			ELSE
 				BEGIN
 					SET @ExisteError = 1
-					SET @DetalleError = 'Curso en Aula: ' +	@NumeroDeAula+', ' + @CodigoCurso+', ' + @CodigoCiclo	+', No Existe'
+					SET @DetalleError = 'Curso con número de Aula: '+	CONVERT(VARCHAR , @NumeroDeAula) +', Código de Curso: ' + CONVERT(VARCHAR , @CodigoCurso)	+ ' y Codigo de Ciclo: '+ CONVERT(VARCHAR , @CodigoCiclo) + '. No Existe'
 				END
 		COMMIT TRANSACTION
 	END TRY
@@ -39,6 +39,6 @@
 		EXEC @NumeroDeError = SP_ErroresBD_Insertar @ModificadoPor
 
 		SET @ExisteError = 1
-		SET @DetalleError = 'Error al eliminar Curso En Aula: '+	@NumeroDeAula+', ' + @CodigoCurso+', ' + @CodigoCiclo	+'. Error: ' + @NumeroDeError
+		SET @DetalleError = 'Error al eliminar Curso En Aula: '+	CONVERT(VARCHAR , @NumeroDeAula) +', Código de Curso: ' + CONVERT(VARCHAR , @CodigoCurso)	+ ' y Codigo de Ciclo: '+  CONVERT(VARCHAR , @CodigoCiclo) +' Error: ' + @NumeroDeError		
 
 	END CATCH

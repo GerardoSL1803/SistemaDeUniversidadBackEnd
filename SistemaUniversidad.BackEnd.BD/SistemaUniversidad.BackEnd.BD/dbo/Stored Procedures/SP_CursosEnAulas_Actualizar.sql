@@ -36,7 +36,7 @@
 			ELSE
 				BEGIN
 					SET @ExisteError = 1
-					SET @DetalleError = 'Curso con número de Aula: '+	@NumeroDeAula +', Código de Curso: ' + @CodigoCurso	+ ' y Codigo de Ciclo: '+ @CodigoCiclo + '. No Existe'
+					SET @DetalleError = 'Curso con número de Aula: '+	CONVERT(VARCHAR , @NumeroDeAula) +', Código de Curso: ' + CONVERT(VARCHAR , @CodigoCurso)	+ ' y Codigo de Ciclo: '+ CONVERT(VARCHAR , @CodigoCiclo) + '. No Existe'
 				END
 		COMMIT TRANSACTION
 	END TRY
@@ -48,6 +48,6 @@
 		EXEC @NumeroDeError = SP_ErroresBD_Insertar @ModificadoPor
 
 		SET @ExisteError = 1
-		SET @DetalleError = 'Error actualizando Cursos en Aulas: '+	@NumeroDeAula +', Código de Curso: ' + @CodigoCurso	+ ' y Codigo de Ciclo: '+ @CodigoCiclo +' Error: ' + @NumeroDeError		
+		SET @DetalleError = 'Error actualizando Cursos en Aulas: '+	CONVERT(VARCHAR , @NumeroDeAula) +', Código de Curso: ' + CONVERT(VARCHAR , @CodigoCurso)	+ ' y Codigo de Ciclo: '+  CONVERT(VARCHAR , @CodigoCiclo) +' Error: ' + @NumeroDeError		
 
 	END CATCH

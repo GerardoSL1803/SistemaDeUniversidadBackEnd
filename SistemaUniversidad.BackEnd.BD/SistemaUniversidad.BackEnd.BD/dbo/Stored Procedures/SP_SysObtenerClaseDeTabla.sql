@@ -1,7 +1,7 @@
 ﻿CREATE PROCEDURE SP_SysObtenerClaseDesdeTabla
 @TableNameInput VARCHAR(60)
 AS
-DECLARE @TableName SYSNAME = 'Cliente'
+DECLARE @TableName SYSNAME = @TableNameInput
 	DECLARE @result VARCHAR(max) = 'public class ' + @TableName + '
 	{'
 

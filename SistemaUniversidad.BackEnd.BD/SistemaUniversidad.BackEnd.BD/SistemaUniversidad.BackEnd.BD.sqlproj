@@ -177,7 +177,8 @@
     <Build Include="dbo\Stored Procedures\SP_CursosEnAulas_Actualizar.sql" />
     <Build Include="dbo\Stored Procedures\SP_CursosEnAulas_Desactivar.sql" />
     <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
-    <Build Include="dbo\Stored Procedures\SP_SysObtenerClaseDesdeTabla.sql" />
+    <None Include="Scripts\ConsultasRapidas.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SysObtenerClaseDeTabla.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="SistemaUniversidad.BackEnd.BD.publish.xml" />

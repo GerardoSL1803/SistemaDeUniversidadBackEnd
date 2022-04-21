@@ -30,7 +30,7 @@
 			ELSE
 				BEGIN
 					SET @ExisteError = 1
-					SET @DetalleError = 'El Ciclo Lectivo: ' + @CodigoCiclo +'. No Existe'
+					SET @DetalleError = 'El Ciclo Lectivo: ' + CONVERT(VARCHAR , @CodigoCiclo) +'. No Existe'
 				END
 		COMMIT TRANSACTION
 	END TRY
@@ -42,6 +42,6 @@
 		EXEC @NumeroDeError = SP_ErroresBD_Insertar @ModificadoPor
 
 		SET @ExisteError = 1
-		SET @DetalleError = 'Error al actulizar el Ciclo Lectivo: '+ @CodigoCiclo	+ '. Número de Error: ' + @NumeroDeError		
+		SET @DetalleError = 'Error al actulizar el Ciclo Lectivo: '+ CONVERT(VARCHAR , @CodigoCiclo)	+ '. Número de Error: ' + @NumeroDeError		
 
 	END CATCH

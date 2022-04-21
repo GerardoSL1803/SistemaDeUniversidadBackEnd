@@ -25,7 +25,7 @@
 			ELSE
 				BEGIN
 					SET @ExisteError = 1
-					SET @DetalleError = 'Universidad: '+ @CodigoUniversidad +'. No Existe'
+					SET @DetalleError = 'Universidad: '+ CONVERT(VARCHAR , @CodigoUniversidad) +'. No Existe'
 				END
 		COMMIT TRANSACTION
 	END TRY
@@ -36,6 +36,6 @@
 		EXEC @NumeroDeError = SP_ErroresBD_Insertar @ModificadoPor
 
 		SET @ExisteError = 1
-		SET @DetalleError = 'Error al eliminar la Universidad: '+	@CodigoUniversidad	+ '. Número de Error: ' + @NumeroDeError
+		SET @DetalleError = 'Error al eliminar la Universidad: '+	CONVERT(VARCHAR , @CodigoUniversidad)	+ '. Número de Error: ' + @NumeroDeError
 
 	END CATCH

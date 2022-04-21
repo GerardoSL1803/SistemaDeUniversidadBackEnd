@@ -25,7 +25,7 @@
 			ELSE
 				BEGIN
 					SET @ExisteError = 1
-					SET @DetalleError = 'Carrera: '+ @CodigoCarrera +'. No Existe'
+					SET @DetalleError = 'Carrera: '+ CONVERT(VARCHAR , @CodigoCarrera) +'. No Existe'
 				END
 		COMMIT TRANSACTION
 	END TRY
@@ -36,6 +36,6 @@
 		EXEC @NumeroDeError = SP_ErroresBD_Insertar @ModificadoPor
 
 		SET @ExisteError = 1
-		SET @DetalleError = 'Error al eliminar la Carrera: '+	@CodigoCarrera	+ '. Número de Error: ' + @NumeroDeError
+		SET @DetalleError = 'Error al eliminar la Carrera: '+	CONVERT(VARCHAR , @CodigoCarrera)	+ '. Número de Error: ' + @NumeroDeError
 
 	END CATCH
