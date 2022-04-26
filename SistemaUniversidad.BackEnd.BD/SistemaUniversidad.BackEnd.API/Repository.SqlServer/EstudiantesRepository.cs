@@ -41,7 +41,7 @@ namespace SistemaUniversidad.BackEnd.API.Repository.SqlServer
             }
         }
 
-        public void Eliminar(int id)
+        public void Eliminar(string id)
         {
             throw new NotImplementedException();
         }

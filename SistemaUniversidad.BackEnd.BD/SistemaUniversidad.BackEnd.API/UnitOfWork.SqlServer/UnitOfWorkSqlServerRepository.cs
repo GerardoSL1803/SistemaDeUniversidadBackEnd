@@ -8,12 +8,15 @@ namespace SistemaUniversidad.BackEnd.API.UnitOfWork.SqlServer
     {
         //Acá van todos los otros repositorios
         public IAulasRepository AulasRepository { get; }
+        public IEstudiantesRepository EstudiantesRepository { get; }
 
         public UnitOfWorkSqlServerRepository(SqlConnection context, SqlTransaction transaction)
         {
             //Acá van todos los otros repositorios
 
             AulasRepository = new AulasRepository(context, transaction);
+
+            EstudiantesRepository = new EstudiantesRepository(context, transaction);
 
         }
 

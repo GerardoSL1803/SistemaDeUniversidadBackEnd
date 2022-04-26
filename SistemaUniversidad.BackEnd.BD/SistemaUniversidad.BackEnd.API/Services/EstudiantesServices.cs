@@ -14,17 +14,17 @@ namespace SistemaUniversidad.BackEnd.API.Services.Interfaces
         {
             using (var bd = BD.Conectar())
             {
-                bd.Repositories.AulasRepository.Actualizar(model);
+                bd.Repositories.EstudiantesRepository.Actualizar(model);
 
                 bd.SaveChanges();
             }
         }
 
-        public void Eliminar(int id)
+        public void Eliminar(string id)
         {
             using (var bd = BD.Conectar())
             {
-                bd.Repositories.AulasRepository.Eliminar(id);
+                bd.Repositories.EstudiantesRepository.Eliminar(id);
 
                 bd.SaveChanges();
             }
@@ -34,24 +34,24 @@ namespace SistemaUniversidad.BackEnd.API.Services.Interfaces
         {
             using (var bd = BD.Conectar())
             {
-                bd.Repositories.AulasRepository.Insertar(model);
+                bd.Repositories.EstudiantesRepository.Insertar(model);
 
                 bd.SaveChanges();
             }
         }
 
-        public Aula SeleccionarPorId(int id)
+        public Estudiante SeleccionarPorId(String id)
         {
-            Aula AulaSeleccionada = new();
+            Estudiante EstudianteSeleccionado = new();
 
             using (var bd = BD.Conectar())
             {
-                AulaSeleccionada = bd.Repositories.AulasRepository.SeleccionarPorId(id);
+                EstudianteSeleccionado = bd.Repositories.EstudiantesRepository.SeleccionarPorId(id);
 
                 bd.SaveChanges();
             }
 
-            return AulaSeleccionada;
+            return EstudianteSeleccionado;
         }
 
         public List<Estudiante> SeleccionarTodos()

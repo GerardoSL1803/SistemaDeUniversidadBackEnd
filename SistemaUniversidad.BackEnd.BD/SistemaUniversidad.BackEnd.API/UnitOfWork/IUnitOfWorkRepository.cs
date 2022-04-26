@@ -6,5 +6,6 @@ namespace SistemaUniversidad.BackEnd.API.UnitOfWork
 {
 //ACA VAN TODOS LOS REPOS DEL SISTEMA
         IAulasRepository AulasRepository { get; }
+        IEstudiantesRepository EstudiantesRepository { get; }
     }
 }
