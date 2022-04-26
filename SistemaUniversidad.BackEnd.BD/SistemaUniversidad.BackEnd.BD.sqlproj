@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>SistemaUniversidad.BackEnd.BD</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{88585ff9-5043-406d-b6a1-34b1bbb8ceac}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql150DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>SistemaUniversidad.BackEnd.BD</RootNamespace>
+    <AssemblyName>SistemaUniversidad.BackEnd.BD</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="Scripts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\ErroresBD.sql" />
+    <Build Include="dbo\Tables\Universidades.sql" />
+    <Build Include="dbo\Tables\Sedes.sql" />
+    <Build Include="dbo\Tables\Carreras.sql" />
+    <Build Include="dbo\Tables\Cursos.sql" />
+    <Build Include="dbo\Tables\Estudiantes.sql" />
+    <Build Include="dbo\Tables\EmailDeEstudiantes.sql" />
+    <Build Include="dbo\Tables\Docentes.sql" />
+    <Build Include="dbo\Tables\EmailDeDocentes.sql" />
+    <Build Include="dbo\Tables\CiclosLectivos.sql" />
+    <Build Include="dbo\Tables\Matriculas.sql" />
+    <Build Include="dbo\Tables\CursosEnMatricula.sql" />
+    <Build Include="dbo\Tables\CursosDocentes.sql" />
+    <Build Include="dbo\Tables\Aulas.sql" />
+    <Build Include="dbo\Tables\CursosEnAulas.sql" />
+    <Build Include="dbo\Views\VW_Universidades_SeleccionarTodos.sql" />
+    <Build Include="dbo\Views\VW_Sedes_SeleccionarTodos.sql" />
+    <Build Include="dbo\Views\VW_Carreras_SeleccionarTodos.sql" />
+    <Build Include="dbo\Views\VW_Cursos_SeleccionarTodos.sql" />
+    <Build Include="dbo\Views\VW_Estudiantes_SeleccionarTodos.sql" />
+    <Build Include="dbo\Views\VW_EmailDeEstudiantes_SeleccionarTodos.sql" />
+    <Build Include="dbo\Views\VW_Docentes_SeleccionarTodos.sql" />
+    <Build Include="dbo\Views\VW_EmailDeDocentes_SeleccionarTodos.sql" />
+    <Build Include="dbo\Views\VW_CiclosLectivos_SeleccionarTodos.sql" />
+    <Build Include="dbo\Views\VW_Matriculas_SeleccionarTodos.sql" />
+    <Build Include="dbo\Views\VW_CursosEnMatricula_SeleccionarTodos.sql" />
+    <Build Include="dbo\Views\VW_CursosDocentes_SeleccionarTodos.sql" />
+    <Build Include="dbo\Views\VW_Aulas_SeleccionarTodos.sql" />
+    <Build Include="dbo\Views\VW_CursosEnAulas_SeleccionarTodos.sql" />
+    <Build Include="dbo\Functions\FN_Universidades_VerificaExistenciaPorId.sql" />
+    <Build Include="dbo\Functions\FN_Sedes_VerificaExistenciaPorId.sql" />
+    <Build Include="dbo\Functions\FN_Carreras_VerificaExistenciaPorId.sql" />
+    <Build Include="dbo\Functions\FN_Cursos_VerificaExistenciaPorId.sql" />
+    <Build Include="dbo\Functions\FN_Estudiantes_VerificaExistenciaPorId.sql" />
+    <Build Include="dbo\Functions\FN_EmailDeEstudiantes_VerificaExistenciaPorId.sql" />
+    <Build Include="dbo\Functions\FN_Docentes_VerificaExistenciaPorId.sql" />
+    <Build Include="dbo\Functions\FN_EmailDeDocentes_VerificaExistenciaPorId.sql" />
+    <Build Include="dbo\Functions\FN_CiclosLectivos_VerificaExistenciaPorId.sql" />
+    <Build Include="dbo\Functions\FN_Matriculas_VerificaExistenciaPorId.sql" />
+    <Build Include="dbo\Functions\FN_CursosEnMatricula_VerificaExistenciaPorId.sql" />
+    <Build Include="dbo\Functions\FN_CursosDocentes_VerificaExistenciaPorId.sql" />
+    <Build Include="dbo\Functions\FN_Aulas_VerificaExistenciaPorId.sql" />
+    <Build Include="dbo\Functions\FN_CursosEnAulas_VerificaExistenciaPorId.sql" />
+    <Build Include="dbo\Functions\FN_Univerisidades_SeleccionarPorId.sql" />
+    <Build Include="dbo\Functions\FN_Universidades_SeleccionarTodos.sql" />
+    <Build Include="dbo\Functions\FN_Sedes_SeleccionarPorId.sql" />
+    <Build Include="dbo\Functions\FN_Sedes_SeleccionarTodos.sql" />
+    <Build Include="dbo\Functions\FN_Carreras_SeleccionarPorId.sql" />
+    <Build Include="dbo\Functions\FN_Carreras_SeleccionarTodos.sql" />
+    <Build Include="dbo\Functions\FN_Estudiantes_SeleccionarPorId.sql" />
+    <Build Include="dbo\Functions\FN_Estudiantes_SeleccionarTodos.sql" />
+    <Build Include="dbo\Functions\FN_EmailDeEstudiantes_SeleccionarPorId.sql" />
+    <Build Include="dbo\Functions\FN_EmailDeEstudiantes_SeleccionarTodos.sql" />
+    <Build Include="dbo\Functions\FN_Docentes_SeleccionarPorId.sql" />
+    <Build Include="dbo\Functions\FN_Docentes_SeleccionarTodos.sql" />
+    <Build Include="dbo\Functions\FN_EmailDeDocentes_SeleccionarPorId.sql" />
+    <Build Include="dbo\Functions\FN_EmailDeDocentes_SeleccionarTodos.sql" />
+    <Build Include="dbo\Functions\FN_CiclosLectivos_SeleccionarPorId.sql" />
+    <Build Include="dbo\Functions\FN_CiclosLectivos_SeleccionarTodos.sql" />
+    <Build Include="dbo\Functions\FN_Matriculas_SeleccionarPorId.sql" />
+    <Build Include="dbo\Functions\FN_Matriculas_SeleccionarTodos.sql" />
+    <Build Include="dbo\Functions\FN_CursosEnMatricula_SeleccionarPorId.sql" />
+    <Build Include="dbo\Functions\FN_CursosEnMatricula_SeleccionarTodos.sql" />
+    <Build Include="dbo\Functions\FN_CursosDocentes_SeleccionarPorId.sql" />
+    <Build Include="dbo\Functions\FN_CursosDocentes_SeleccionarTodos.sql" />
+    <Build Include="dbo\Functions\FN_Aulas_SeleccionarPorId.sql" />
+    <Build Include="dbo\Functions\FN_Aulas_SeleccionarTodos.sql" />
+    <Build Include="dbo\Functions\FN_CursosEnAulas_SeleccionarPorId.sql" />
+    <Build Include="dbo\Functions\FN_CursosEnAulas_SeleccionarTodos.sql" />
+    <Build Include="dbo\Stored Procedures\SP_ErroresBD_Insertar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Universidades_Insertar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Universidades_Actualizar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Universidades_Desactivar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Sedes_Insertar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Sedes_Actualizar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Sedes_Desactivar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Carreras_Insertar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Carreras_Actualizar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Carreras_Desactivar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Cursos_Insertar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Cursos_Actualizar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Cursos_Desactivar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Estudiantes_Insertar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Estudiantes_Actualizar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Estudiantes_Desactivar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_EmailDeEstudiantes_Insertar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_EmailDeEstudiantes_Actualizar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_EmailDeEstudiantes_Desactivar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Docentes_Insertar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Docentes_Actualizar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Docentes_Desactivar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_EmailDeDocentes_Insertar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_EmailDeDocentes_Actualizar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_EmailDeDocentes_Desactivar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_CiclosLectivos_Insertar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_CiclosLectivos_Actualizar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_CiclosLectivos_Desactivar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Matriculas_Insertar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Matriculas_Actualizar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Matriculas_Desactivar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_CursosEnMatricula_Insertar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_CursosEnMatricula_Actualizar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_CursosEnMatricula_Eliminar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_CursosDocentes_Insertar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_CursosDocentes_Actualizar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_CursosDocentes_Desactivar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Aulas_Insertar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Aulas_Actualizar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Aulas_Desactivar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_CursosEnAulas_Insertar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_CursosEnAulas_Actualizar.sql" />
+    <Build Include="dbo\Stored Procedures\SP_CursosEnAulas_Desactivar.sql" />
+    <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
+    <None Include="Scripts\ConsultasRapidas.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SysObtenerClaseDeTabla.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SistemaUniversidad.BackEnd.BD.publish.xml" />
+  </ItemGroup>
+</Project>
