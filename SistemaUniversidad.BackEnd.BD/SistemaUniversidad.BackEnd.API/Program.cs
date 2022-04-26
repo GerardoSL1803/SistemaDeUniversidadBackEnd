@@ -13,7 +13,8 @@ builder.Services.AddSwaggerGen();
 
 //Aca van todos los servicios de cada Entidad
 builder.Services.AddTransient<IUnitOfWork, UnitOfWorkSqlServer>();
-builder.Services.AddTransient<IAulasService, AulasService>(); 
+builder.Services.AddTransient<IAulasService, AulasService>();
+builder.Services.AddTransient<IEstudiantesService, IEstudiantesService>();
 
 builder.Services.AddControllers()
                 //.AddJsonOptions(options =>
