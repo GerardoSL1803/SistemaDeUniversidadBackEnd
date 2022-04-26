@@ -36,6 +36,6 @@
 		EXEC @NumeroDeError = SP_ErroresBD_Insertar @ModificadoPor
 
 		SET @ExisteError = 1
-		SET @DetalleError = 'Error al eliminar la Matricula: '+	CONVERT(VARCHAR , @CodigoMatricula)	+ '. Número de Error: ' + @NumeroDeError
+		SET @DetalleError = 'Error al eliminar la Matricula: '+	CONVERT(VARCHAR , @CodigoMatricula)	+ '. Número de Error: ' +  CONVERT(VARCHAR ,@NumeroDeError)
 
 	END CATCH

@@ -40,6 +40,6 @@
 		EXEC @NumeroDeError = SP_ErroresBD_Insertar @ModificadoPor
 
 		SET @ExisteError = 1
-		SET @DetalleError = 'Error actualizando el Curso en Matricula: '+	CONVERT(VARCHAR , @CodigoMatricula) + ' , '+ CONVERT(VARCHAR , @CodigoCurso)	+ '. Número de Error: ' + @NumeroDeError		
+		SET @DetalleError = 'Error actualizando el Curso en Matricula: '+	CONVERT(VARCHAR , @CodigoMatricula) + ' , '+ CONVERT(VARCHAR , @CodigoCurso)	+ '. Número de Error: ' +  CONVERT(VARCHAR ,@NumeroDeError)		
 
 	END CATCH

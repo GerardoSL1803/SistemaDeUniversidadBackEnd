@@ -36,6 +36,6 @@
 		EXEC @NumeroDeError = SP_ErroresBD_Insertar @ModificadoPor
 
 		SET @ExisteError = 1
-		SET @DetalleError = 'Error al eliminar el Aula: '+	CONVERT(VARCHAR , @NumeroDeAula)	+ '. Número de Error: ' + @NumeroDeError
+		SET @DetalleError = 'Error al eliminar el Aula: '+	CONVERT(VARCHAR , @NumeroDeAula)	+ '. Número de Error: ' +  CONVERT(VARCHAR ,@NumeroDeError)
 
 	END CATCH

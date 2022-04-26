@@ -36,6 +36,6 @@
 		EXEC @NumeroDeError = SP_ErroresBD_Insertar @ModificadoPor
 
 		SET @ExisteError = 1
-		SET @DetalleError = 'Error al eliminar el Ciclo Lectivo '+	CONVERT(VARCHAR , @CodigoCiclo)	+ '. Número de Error: ' + @NumeroDeError
+		SET @DetalleError = 'Error al eliminar el Ciclo Lectivo '+	CONVERT(VARCHAR , @CodigoCiclo)	+ '. Número de Error: ' +  CONVERT(VARCHAR ,@NumeroDeError)
 
 	END CATCH

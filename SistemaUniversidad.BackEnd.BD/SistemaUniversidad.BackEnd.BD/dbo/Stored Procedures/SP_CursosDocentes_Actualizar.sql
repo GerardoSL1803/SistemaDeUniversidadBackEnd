@@ -42,6 +42,6 @@
 		EXEC @NumeroDeError = SP_ErroresBD_Insertar @ModificadoPor
 
 		SET @ExisteError = 1
-		SET @DetalleError = 'Error al actulizar. Número de código: '+ CONVERT(VARCHAR , @Codigo)	+ '. Número de Error: ' + @NumeroDeError		
+		SET @DetalleError = 'Error al actulizar. Número de código: '+ CONVERT(VARCHAR , @Codigo)	+ '. Número de Error: ' +  CONVERT(VARCHAR ,@NumeroDeError)	
 
 	END CATCH

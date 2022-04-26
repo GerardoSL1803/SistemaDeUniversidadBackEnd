@@ -23,6 +23,6 @@
 		EXEC @NumeroDeError = SP_ErroresBD_Insertar @CreadoPor
 
 		SET @ExisteError = 1
-		SET @DetalleError = 'Error insertando la Carrera. Número de Error: ' + @NumeroDeError
+		SET @DetalleError = 'Error insertando la Carrera. Número de Error: ' +  CONVERT(VARCHAR ,@NumeroDeError)
 		
 	END CATCH

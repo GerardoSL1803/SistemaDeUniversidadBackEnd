@@ -40,6 +40,6 @@
 		EXEC @NumeroDeError = SP_ErroresBD_Insertar @ModificadoPor
 
 		SET @ExisteError = 1
-		SET @DetalleError = 'Error al actualizar los email del estudiante: '+	@Identificacion	+ '. Número de Error: ' + @NumeroDeError		
+		SET @DetalleError = 'Error al actualizar los email del estudiante: '+	@Identificacion	+ '. Número de Error: ' +  CONVERT(VARCHAR ,@NumeroDeError)		
 
 	END CATCH

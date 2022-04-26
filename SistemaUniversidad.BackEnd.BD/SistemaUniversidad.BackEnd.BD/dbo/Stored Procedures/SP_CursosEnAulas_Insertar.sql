@@ -28,6 +28,6 @@ VALUES(@CodigoCurso, @NumeroDeAula, @DiaLectivo, @HoraInicio, @HoraFin, @CodigoC
 		EXEC @NumeroDeError = SP_ErroresBD_Insertar @CreadoPor
 
 		SET @ExisteError = 1
-		SET @DetalleError = 'Error insertando Cursos en Aulas. Número de Error: ' + @NumeroDeError
+		SET @DetalleError = 'Error insertando Cursos en Aulas. Número de Error: ' +  CONVERT(VARCHAR ,@NumeroDeError)
 		
 	END CATCH
