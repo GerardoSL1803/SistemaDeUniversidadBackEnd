@@ -1,3 +1,4 @@
+using SistemaUniversidad.BackEnd.API.Services;
 using SistemaUniversidad.BackEnd.API.Services.Interfaces;
 using SistemaUniversidad.BackEnd.API.UnitOfWork;
 using SistemaUniversidad.BackEnd.API.UnitOfWork.SqlServer;
@@ -14,7 +15,7 @@ builder.Services.AddSwaggerGen();
 //Aca van todos los servicios de cada Entidad
 builder.Services.AddTransient<IUnitOfWork, UnitOfWorkSqlServer>();
 builder.Services.AddTransient<IAulasService, AulasService>();
-builder.Services.AddTransient<IEstudiantesService, IEstudiantesService>();
+builder.Services.AddTransient<IEstudiantesService, EstudiantesService>();
 
 builder.Services.AddControllers()
                 //.AddJsonOptions(options =>
@@ -42,3 +43,5 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+

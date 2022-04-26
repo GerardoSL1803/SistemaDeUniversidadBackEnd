@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SistemaUniversidad.BackEnd.BD", "SistemaUniversidad.BackEnd.BD\SistemaUniversidad.BackEnd.BD.sqlproj", "{88585FF9-5043-406D-B6A1-34B1BBB8CEAC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SistemaUniversidad.BackEnd.API", "SistemaUniversidad.BackEnd.API\SistemaUniversidad.BackEnd.API.csproj", "{9073E9F7-0913-4B0E-9310-9E62933D480B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SistemaUniversidad.BackEnd.APIv1", "SistemaUniversidad.BackEnd.API\SistemaUniversidad.BackEnd.APIv1.csproj", "{9073E9F7-0913-4B0E-9310-9E62933D480B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
