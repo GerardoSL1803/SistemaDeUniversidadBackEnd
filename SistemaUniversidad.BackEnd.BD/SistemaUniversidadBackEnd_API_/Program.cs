@@ -17,6 +17,7 @@ builder.Services.AddTransient<IAulasService, AulasService>();
 builder.Services.AddTransient<IEstudiantesService, EstudiantesService>();
 builder.Services.AddTransient<ICursoDocenteService, CursoDocenteService>();
 builder.Services.AddTransient<ICursoEnAulaService, CursoEnAulaService>();
+builder.Services.AddTransient<ICursoEnMatriculaService, CursoEnMatriculaService>();
 builder.Services.AddControllers()
                 //.AddJsonOptions(options =>
                 //{
