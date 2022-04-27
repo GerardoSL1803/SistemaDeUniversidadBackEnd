@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SistemaUniversidad.BackEnd.BD", "SistemaUniversidad.BackEnd.BD\SistemaUniversidad.BackEnd.BD.sqlproj", "{88585FF9-5043-406D-B6A1-34B1BBB8CEAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaUniversidadBackEnd_API", "SistemaUniversidadBackEnd_API\SistemaUniversidadBackEnd_API.csproj", "{9CC70947-52C5-412A-8E35-7AF005AE7128}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaUniversidadBackEnd_API_", "SistemaUniversidadBackEnd_API_\SistemaUniversidadBackEnd_API_.csproj", "{DB45E395-B09A-42B6-8AB5-0366464FEAE3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +19,10 @@ Global
 		{88585FF9-5043-406D-B6A1-34B1BBB8CEAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88585FF9-5043-406D-B6A1-34B1BBB8CEAC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{88585FF9-5043-406D-B6A1-34B1BBB8CEAC}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{9CC70947-52C5-412A-8E35-7AF005AE7128}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9CC70947-52C5-412A-8E35-7AF005AE7128}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9CC70947-52C5-412A-8E35-7AF005AE7128}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9CC70947-52C5-412A-8E35-7AF005AE7128}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB45E395-B09A-42B6-8AB5-0366464FEAE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB45E395-B09A-42B6-8AB5-0366464FEAE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB45E395-B09A-42B6-8AB5-0366464FEAE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB45E395-B09A-42B6-8AB5-0366464FEAE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
