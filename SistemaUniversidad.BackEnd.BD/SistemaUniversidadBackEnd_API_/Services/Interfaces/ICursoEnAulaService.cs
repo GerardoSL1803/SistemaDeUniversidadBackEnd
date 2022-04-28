@@ -8,6 +8,6 @@ namespace SistemaUniversidad.BackEnd.API.Services.Interfaces
         CursoEnAula SeleccionarPorId(int id);
         void Insertar(CursoEnAula model);
         void Actualizar(CursoEnAula model);
-        void Eliminar(int id);
+        void Eliminar(int IdCurso , int IdAula , int IdCiclo , string ModificadoPor);
     }
 }

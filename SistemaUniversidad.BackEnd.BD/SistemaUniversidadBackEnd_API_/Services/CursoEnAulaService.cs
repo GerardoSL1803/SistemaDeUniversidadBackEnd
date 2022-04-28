@@ -1,7 +1,6 @@
 ﻿using SistemaUniversidad.BackEnd.API.Models;
 using SistemaUniversidad.BackEnd.API.UnitOfWork;
 using SistemaUniversidad.BackEnd.API.Services.Interfaces;
-
 namespace SistemaUniversidad.BackEnd.API.Services
 {
     public class CursoEnAulaService : ICursoEnAulaService
@@ -21,11 +20,12 @@ namespace SistemaUniversidad.BackEnd.API.Services
             }
         }
 
-        public void Eliminar(int id)
+
+        public void Eliminar(int IdCurso, int IdAula, int iDCiclo, string ModificadoPor)
         {
             using (var bd = BD.Conectar())
             {
-                bd.Repositories.CursoEnAulaRepository.Eliminar(id);
+                bd.Repositories.CursoEnAulaRepository.Eliminar(IdCurso, IdAula, iDCiclo, ModificadoPor);
 
                 bd.SaveChanges();
             }

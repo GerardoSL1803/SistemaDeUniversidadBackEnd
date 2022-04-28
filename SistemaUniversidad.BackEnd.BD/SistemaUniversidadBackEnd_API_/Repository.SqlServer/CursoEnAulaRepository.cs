@@ -44,9 +44,29 @@ namespace SistemaUniversidad.BackEnd.API.Repository.SqlServer
             }
         }
 
-        public void Eliminar(int id)
+        public void Eliminar(int id1, int id2, int id3 , string ModificadoPor)
         {
-            throw new NotImplementedException();
+            var query = "SP_CursosEnAulas_Desactivar";
+            var command = CreateCommand(query);
+            command.CommandType = System.Data.CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@CodigoCurso" , id1);
+            command.Parameters.AddWithValue("@NumeroDeAula", id2);
+            command.Parameters.AddWithValue("@CodigoCiclo", id3);
+            command.Parameters.AddWithValue("@ModificadoPor", ModificadoPor);
+
+            command.Parameters.Add("@DetalleError", SqlDbType.VarChar, 60).Direction = ParameterDirection.Output;
+            command.Parameters.Add("@ExisteError", SqlDbType.Bit).Direction = ParameterDirection.Output;
+
+            command.ExecuteNonQuery();
+
+            bool ExisteError = Convert.ToBoolean(command.Parameters["@ExisteError"].Value);
+            string? DetalleError = Convert.ToString(command.Parameters["@DetalleError"].Value);
+
+            if (ExisteError)
+            {
+                throw new Exception(DetalleError);
+            }
+
         }
 
         public void Insertar(CursoEnAula CursoEnAula)

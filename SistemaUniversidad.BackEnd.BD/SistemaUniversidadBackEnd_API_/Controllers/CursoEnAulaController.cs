@@ -44,13 +44,13 @@ namespace SistemaUniversidad.BackEnd.API.Controllers
 
         // GET api/<AulasController>/5
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public IActionResult Get(int curso, int aula, int ciclo)
         {
             CursoEnAula CursoEnAulaSeleccionado = new();
 
-            CursoEnAulaSeleccionado = ServicoDeCursoEnAula.SeleccionarPorId(id);
+            //CursoEnAulaSeleccionado = ServicoDeCursoEnAula.SeleccionarPorId(curso, aula, ciclo);
 
-            if (CursoEnAulaSeleccionado.CodigoCurso == 0 && CursoEnAulaSeleccionado.CodigoCiclo ==0 && CursoEnAulaSeleccionado.NumeroeDeAula ==0)
+            if (CursoEnAulaSeleccionado.CodigoCurso == 0 && CursoEnAulaSeleccionado.CodigoCiclo == 0 && CursoEnAulaSeleccionado.NumeroeDeAula == 0)
             {
                 return NotFound("CursosEnAulas no encontrada");
             }
@@ -106,7 +106,7 @@ namespace SistemaUniversidad.BackEnd.API.Controllers
 
         // PUT api/<AulasController>/5
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] CursoEnAulaDto CursoEnAulaDto)
+        public IActionResult Put(int curso, int aula, int ciclo, [FromBody] CursoEnAulaDto CursoEnAulaDto)
         {
             try
             {
@@ -139,10 +139,31 @@ namespace SistemaUniversidad.BackEnd.API.Controllers
             }
         }
 
-        // DELETE api/<AulasController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        // DELETE api/<AulasController>/5/2/3
+        [HttpDelete("{IdCurso}/{IdAula}/{IdCiclo}")]
+        public IActionResult Delete(int IdCurso, int IdAula, int IdCiclo)
         {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                   
+                    ServicoDeCursoEnAula.Eliminar(IdCurso,IdAula,IdCiclo,ModificadoPor:"Usuario");
+
+                    return Ok();
+                }
+                else
+                {
+                    string ErroreEnElModelo = ObtenerErroresDeModeloInvalido();
+
+                    return BadRequest(ErroreEnElModelo);
+                }
+            }
+            catch (Exception Ex)
+            {
+                return BadRequest(Ex.Message);
+            }
+
         }
 
         private string ObtenerErroresDeModeloInvalido()
