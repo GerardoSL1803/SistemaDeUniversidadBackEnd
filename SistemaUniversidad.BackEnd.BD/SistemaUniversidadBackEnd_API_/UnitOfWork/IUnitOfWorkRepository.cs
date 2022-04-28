@@ -14,6 +14,10 @@ namespace SistemaUniversidad.BackEnd.API.UnitOfWork
 
         ICursoEnMatriculaRepository CursoEnMatriculaRepository { get; }
 
+        ICursosRepository CursosRepository { get; }
 
+        IDocentesRepository DocentesRepository { get; }
+
+        ICarrerasRepository CarrerasRepository { get; }
     }
 }

@@ -1,3 +1,4 @@
+using SistemaUniversidad.BackEnd.API.Services;
 using SistemaUniversidad.BackEnd.API.Services.Interfaces;
 using SistemaUniversidad.BackEnd.API.UnitOfWork;
 using SistemaUniversidad.BackEnd.API.UnitOfWork.SqlServer;
@@ -13,11 +14,14 @@ builder.Services.AddSwaggerGen();
 
 //Aca van todos los servicios de cada Entidad
 builder.Services.AddTransient<IUnitOfWork, UnitOfWorkSqlServer>();
+builder.Services.AddTransient<ICarrerasService, CarreraService>();
+builder.Services.AddTransient<ICursosService, CursoService>();
+builder.Services.AddTransient<IDocentesService, DocenteService>();
 builder.Services.AddTransient<IAulasService, AulasService>();
 builder.Services.AddTransient<IEstudiantesService, EstudiantesService>();
 builder.Services.AddTransient<ICursoDocenteService, CursoDocenteService>();
 builder.Services.AddTransient<ICursoEnAulaService, CursoEnAulaService>();
-builder.Services.AddTransient<ICursoEnMatriculaService, CursoEnMatriculaService>();
+
 builder.Services.AddControllers()
                 //.AddJsonOptions(options =>
                 //{
