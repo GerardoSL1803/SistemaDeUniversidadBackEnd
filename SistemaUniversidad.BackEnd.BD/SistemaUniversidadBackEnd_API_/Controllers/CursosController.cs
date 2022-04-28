@@ -2,6 +2,7 @@
 using SistemaUniversidad.BackEnd.API.Dtos;
 using SistemaUniversidad.BackEnd.API.Models;
 using SistemaUniversidad.BackEnd.API.Services;
+using SistemaUniversidad.BackEnd.API.Services.Interfaces;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 

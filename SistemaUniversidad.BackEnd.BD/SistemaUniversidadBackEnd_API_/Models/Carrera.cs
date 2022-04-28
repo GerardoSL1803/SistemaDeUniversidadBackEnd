@@ -4,6 +4,8 @@
 	{		
 		public int CodigoCarrera { get; set; }
 
+		public int CodigoSede { get; set; }
+
 		public string Nombre { get; set; }
 
 		public bool? Activo { get; set; }

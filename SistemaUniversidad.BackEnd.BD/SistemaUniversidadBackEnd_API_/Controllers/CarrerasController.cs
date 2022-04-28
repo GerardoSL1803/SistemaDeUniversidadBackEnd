@@ -29,7 +29,7 @@ namespace SistemaUniversidad.BackEnd.API.Controllers
             {
                 CarreraDto carreraDto = new();
                 
-
+                carreraDto.CodigoSede = CarrerasSeleccionada.CodigoSede;
                 carreraDto.Nombre = CarrerasSeleccionada.Nombre;
                 carreraDto.Activo = CarrerasSeleccionada.Activo;
 
@@ -54,6 +54,7 @@ namespace SistemaUniversidad.BackEnd.API.Controllers
 
             CarreraDto carreraDto = new();
 
+            carreraDto.CodigoSede = CarrerasSeleccionada.CodigoSede;
             carreraDto.Nombre = CarrerasSeleccionada.Nombre;
             carreraDto.Activo = CarrerasSeleccionada.Activo;
 
@@ -69,7 +70,7 @@ namespace SistemaUniversidad.BackEnd.API.Controllers
                 if (ModelState.IsValid)
                 {
                     Carrera CarreraPorInsertar = new();
-
+                    CarreraPorInsertar.CodigoSede = carreraDto.CodigoSede;
                     CarreraPorInsertar.Nombre = carreraDto.Nombre;
                     CarreraPorInsertar.CreadoPor = "diazgs";
 
@@ -101,6 +102,7 @@ namespace SistemaUniversidad.BackEnd.API.Controllers
                     Carrera CarreraPorActualizar = new();
 
                     CarreraPorActualizar.CodigoCarrera = id;
+                    CarreraPorActualizar.CodigoSede = carreraDto.CodigoSede;
                     CarreraPorActualizar.Nombre = carreraDto.Nombre;
                     CarreraPorActualizar.ModificadoPor = "diazgs";
 

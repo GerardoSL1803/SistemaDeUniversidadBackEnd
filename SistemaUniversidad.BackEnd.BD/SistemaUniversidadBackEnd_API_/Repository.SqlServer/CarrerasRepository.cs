@@ -22,6 +22,7 @@ namespace SistemaUniversidad.BackEnd.API.Repository.SqlServer
             command.CommandType = System.Data.CommandType.StoredProcedure;
 
             command.Parameters.AddWithValue("@CodigoCarrera", carrera.CodigoCarrera);
+            command.Parameters.AddWithValue("@CodigoSede", carrera.CodigoSede);
             command.Parameters.AddWithValue("@Nombre", carrera.Nombre);
             command.Parameters.AddWithValue("@ModificadoPor", carrera.ModificadoPor);
 
@@ -52,7 +53,7 @@ namespace SistemaUniversidad.BackEnd.API.Repository.SqlServer
 
             command.CommandType = System.Data.CommandType.StoredProcedure;
 
-           
+            command.Parameters.AddWithValue("@CodigoSede", carrera.CodigoSede);
             command.Parameters.AddWithValue("@Nombre", carrera.Nombre);
             command.Parameters.AddWithValue("@CreadoPor", carrera.CreadoPor);
 
@@ -85,6 +86,7 @@ namespace SistemaUniversidad.BackEnd.API.Repository.SqlServer
             while (reader.Read())
             {
                 CarreraSeleccionada.CodigoCarrera = Convert.ToInt32(reader["CodigoCarrera"]);
+                CarreraSeleccionada.CodigoSede = Convert.ToInt32(reader["CodigoCarrera"]);
                 CarreraSeleccionada.Nombre = Convert.ToString(reader["Nombre"]);
 
                 CarreraSeleccionada.Activo = Convert.ToBoolean(reader["Activo"]);
@@ -113,6 +115,7 @@ namespace SistemaUniversidad.BackEnd.API.Repository.SqlServer
                 Carrera CarreraSeleccionada = new();
 
                 CarreraSeleccionada.CodigoCarrera = Convert.ToInt32(reader["CodigoCarrera"]);
+                CarreraSeleccionada.CodigoSede = Convert.ToInt32(reader["CodigoSede"]);
                 CarreraSeleccionada.Nombre = Convert.ToString(reader["Nombre"]);
 
                 CarreraSeleccionada.Activo = Convert.ToBoolean(reader["Activo"]);

@@ -1,6 +1,6 @@
 ﻿using SistemaUniversidad.BackEnd.API.Models;
 using SistemaUniversidad.BackEnd.API.UnitOfWork;
-
+using SistemaUniversidad.BackEnd.API.Services.Interfaces;
 namespace SistemaUniversidad.BackEnd.API.Services
 {
     public class DocenteService : IDocentesService

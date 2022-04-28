@@ -1,6 +1,6 @@
 ﻿using SistemaUniversidad.BackEnd.API.Models;
 
-namespace SistemaUniversidad.BackEnd.API.Services
+namespace SistemaUniversidad.BackEnd.API.Services.Interfaces
 {
     public interface IDocentesService
     {

@@ -1,7 +1,7 @@
 ﻿using SistemaUniversidad.BackEnd.API.Models;
 using SistemaUniversidad.BackEnd.API.UnitOfWork;
-
-namespace SistemaUniversidad.BackEnd.API.Services.Interfaces
+using SistemaUniversidad.BackEnd.API.Services.Interfaces;
+namespace SistemaUniversidad.BackEnd.API.Services
 {
     public class EstudiantesService : IEstudiantesService
     {
